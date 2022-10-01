@@ -1,0 +1,41 @@
+Component to view Binding
+------------------------------
+1) String interpolation:
+syntax: {{expression}}
+
+2) Property Binding: [target-property]="source-property"
+
+
+View to Component Binding
+1)Event Binding
+-------------------------
+#syntax
+
+(event) = "function call"
+
+2)Event binding using event argument
+-------------------------------------------
+syntax
+---------------
+(eventname)="function call($event)"
+
+Angular directives
+structural directives
+*ngIf=""
+*ngFor="let transaction of database"
+{{}}
+attribute directives
+1.inbuilt
+2.userdefined
+
+
+
+
+validation
+------------
+template driven Angular form
+Model  driven Angular form
+
+
+form group form array form control name} Reactive Forms
+

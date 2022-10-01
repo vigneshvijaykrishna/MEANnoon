@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+  
+  
+  <div class="container col-md-12 mt-0">
+      <div class="d-flex justify-content-center h-100">
+          <div class="card">
+              <div class="card-header">
+                  <h3 class="text-center">Sign In</h3>
+                  
+              </div>
+              <div class="card-body">
+                  <form [formGroup]="registerForm">
+            <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control" formControlName="name" name="name" placeholder="Name"id="reg_name" required>
+                      </div>
+                      <div style="color: red" *ngIf="(this.registerForm.get('name')?.errors)&&(this.registerForm.get('name')?.touched)">Incorrect Form</div>
+
+                      <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          </div>
+                          <input type="text" class="form-control" formControlName="acno" name="accno" placeholder="account number" required>
+                          
+                      </div>
+                      <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-key"></i></span>
+                          </div>
+                          <input type="password" class="form-control" formControlName="pswd" name="pswd"  placeholder="password" id="reg_password" required>
+                      </div>
+                      
+                      <div class="form-group">
+                          <input type="submit" (click)="signup()" value="Register" class="btn float-right login_btn " style="width:50%" >
+                      </div>
+                  </form>
+              </div>
+              <p style="color:white;align-items:baseline;">already a user? <a  routerLink="">Login</a></p>
+          </div>
+      </div>
+  </div>

@@ -1,0 +1,94 @@
+<app-navbar></app-navbar>
+<div class="row">
+<p style="color:aquamarine">Welcome {{currentusername}}</p>
+<p style="color:brown">{{logindate|date:'short'}}</p>
+<!-- <p>{{logindate}}</p> -->
+<button type="button" (click)="logout()" style="margin-left :1060px;" class="btn btn-outline-primary">Logout</button>
+<button class="btn btn-dark" (click)="Deleteaccount()">Delete my account</button>
+<app-deleteaccount [item]="delacc" (onCancel)="cancel()" (onDelete)="Deleted($event)"></app-deleteaccount>
+</div>
+<app-animations></app-animations>
+<div class="row" [ngClass]="delacc?'style1':''">
+    <div class="col-6">
+        <div class="container col-md-12 mt-0">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center" appHighlight>Deposit</h3>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form>
+                  <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    
+                                </div>
+                                <input type="text" class="form-control"  name="accno" [(ngModel)]="acno" placeholder="Account Number"id="ac_no" required>
+                                
+                            </div>
+        
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                
+                                </div>
+                                <input type="password" class="form-control" [(ngModel)]="pswd"  name="Pswd" placeholder="Password" required>
+                                
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input type="text" class="form-control" [(ngModel)]="amnt"  name="amt"  placeholder="Amount" id="amoutnt" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" (click)="deposit()" value="Deposit" class="btn float-right login_btn " style="width:50%" >
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col-6">
+        <div class="container col-md-12 mt-0">
+            <div class="d-flex justify-content-center h-100">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">WithDrawal</h3>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form>
+                  <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    
+                                </div>
+                                <input type="text" class="form-control"  name="accno" [(ngModel)]="acno" placeholder="Account Number"id="ac_no" required>
+                                
+                            </div>
+        
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                
+                                </div>
+                                <input type="password" class="form-control" [(ngModel)]="pswd"  name="Pswd" placeholder="Password" required>
+                                
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                </div>
+                                <input type="text" class="form-control" [(ngModel)]="amnt"  name="amt"  placeholder="Amount" id="amoutnt" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="submit" (click)="withdraw()" value="Withdraw" class="btn float-right login_btn " style="width:50%" >
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
